@@ -25,6 +25,7 @@ Windows (PowerShell): venv\Scripts\Activate.ps1
 วิธีปิด venv: deactivate
 
 ### 4. ติดตั้ง dependencies
+pip install --upgrade pip setuptools wheel
 pip install -r requirements.txt
 
 ### 5. รันโปรแกรม
