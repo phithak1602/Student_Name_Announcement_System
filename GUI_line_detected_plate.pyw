@@ -409,7 +409,7 @@ class LineDetectionGUI(QMainWindow):
     def start_camera(self):
         url = self.read_rtsp_url()
         '''self.cap = cv2.VideoCapture(url)'''
-        self.cap = cv2.VideoCapture("video_test/video_CCTV_test3.mp4")
+        self.cap = cv2.VideoCapture("video_test/video_CCTV_test1.mp4")
         self.cap.set(cv2.CAP_PROP_BUFFERSIZE, 1)
         
         if self.cap.isOpened():
@@ -587,4 +587,5 @@ def main():
     sys.exit(app.exec_())
 
 if __name__ == "__main__":
+
     main()
