@@ -8,7 +8,7 @@
 ## 🚀 การติดตั้งและใช้งาน
 
 ### 1. Clone โปรเจค
-git clone https://github.com//Student_Name_Announcement_System.git
+git clone https://github.com/phithak1602/Student_Name_Announcement_System.git
 
 cd Student_Name_Announcement_System
 
@@ -16,11 +16,9 @@ cd Student_Name_Announcement_System
 python -m venv venv
 
 ### 3. เปิดใช้งาน venv
-Windows (CMD):
-venv\Scripts\activate.bat
+Windows (CMD): venv\Scripts\activate.bat
 
-Windows (PowerShell):
-venv\Scripts\Activate.ps1
+Windows (PowerShell): venv\Scripts\Activate.ps1
 
 หลังจาก activate สำเร็จ จะเห็น (venv) นำหน้าบรรทัดคำสั่ง
 
