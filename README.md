@@ -22,6 +22,8 @@ Windows (PowerShell): venv\Scripts\Activate.ps1
 
 หลังจาก activate สำเร็จ จะเห็น (venv) นำหน้าบรรทัดคำสั่ง
 
+วิธีปิด venv: deactivate
+
 ### 4. ติดตั้ง dependencies
 pip install -r requirements.txt
 
