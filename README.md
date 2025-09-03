@@ -28,4 +28,4 @@ Windows (PowerShell): venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 
 ### 5. รันโปรแกรม
-pythonw main.py
+pythonw GUI_main.pyw
