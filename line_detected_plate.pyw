@@ -8,7 +8,7 @@ plate_model = YOLO(r"model/plate.pt")
 with open("txt_file/rtsp_url.txt", "r") as f:
     url = f.read().strip()
 '''url = "rtsp://admin:Nice1234@192.168.1.108:554/cam/realmonitor?channel=1&subtype=0"'''
-cap = cv2.VideoCapture("video_test/video_CCTV_test3.mp4")
+cap = cv2.VideoCapture("video_test/video_CCTV_test1.mp4")
 '''cap = cv2.VideoCapture(url)'''
 cap.set(cv2.CAP_PROP_BUFFERSIZE, 1)
 
@@ -138,4 +138,5 @@ if os.path.exists(temp_frame_path):
 
 cap.release()
 cv2.destroyAllWindows()
+
 print("🛑 License Plate Detection System หยุดทำงาน")
