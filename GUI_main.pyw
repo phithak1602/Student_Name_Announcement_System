@@ -14,7 +14,6 @@ from PyQt5.QtGui import QImage
 class VideoThread(QThread):
     change_pixmap_signal = pyqtSignal(QImage)
 
-    time.sleep(2)
     def __init__(self):
         super().__init__()
         self.running = False
@@ -963,6 +962,15 @@ class SystemGUI(QMainWindow):
         """ปิดโปรแกรม - หยุดการทำงานของไฟล์ต่างๆ"""
         with open("txt_file/databases_status.txt", "w") as f:
                 f.truncate(0)
+        with open('txt_file/car_plate.txt', 'w') as f:
+                f.truncate(0)
+        with open('txt_file/names.txt', 'w') as f:
+                f.truncate(0)
+        if os.path.exists('result_plate'):
+            for filename in os.listdir('result_plate'):
+                file_path = os.path.join('result_plate', filename)
+                if os.path.isfile(file_path):
+                    os.remove(file_path)
         try:
             
             # หยุด video thread
@@ -1057,4 +1065,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
