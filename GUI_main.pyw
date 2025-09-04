@@ -747,7 +747,7 @@ class SystemGUI(QMainWindow):
             
             # รันไฟล์ IPv4_Address.py
             if os.path.exists('IPv4_Address.pyw'):
-                process = subprocess.Popen(['python', 'IPv4_Address.pyw'])
+                process = subprocess.Popen(['pythonw', 'IPv4_Address.pyw'])
                 process.wait()  # รอให้เสร็จ
                 
                 # อัพเดทการแสดงผลทันที
@@ -1057,3 +1057,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
