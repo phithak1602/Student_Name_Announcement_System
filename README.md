@@ -7,6 +7,8 @@
 
 ## 🚀 การติดตั้งและใช้งาน
 
+เปิด Windows (CMD)
+
 ### 1. Clone โปรเจค
 git clone https://github.com/phithak1602/Student_Name_Announcement_System.git
 
@@ -18,16 +20,18 @@ python -m venv venv
 ### 3. เปิดใช้งาน venv
 Windows (CMD): venv\Scripts\activate.bat
 
-Windows (PowerShell): venv\Scripts\Activate.ps1
-
 หลังจาก activate สำเร็จ จะเห็น (venv) นำหน้าบรรทัดคำสั่ง
 
-วิธีปิด venv: deactivate
+(วิธีปิด venv: deactivate)
 
 ### 4. ติดตั้ง dependencies
-pip install --upgrade pip setuptools wheel
-
 pip install -r requirements.txt
 
-### 5. รันโปรแกรม
+### 5. เปิด XAMPP
+ในโปรแกรม XAMPP ให้เปิด Apache และ Mysql
+
+### 6. นำเข้า Databases
+Import students.sql จาก Student_Name_Announcement_System\file_setup\Databases ผ่าน http://localhost/phpmyadmin
+
+### 7. รันโปรแกรม
 pythonw GUI_main.pyw
