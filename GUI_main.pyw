@@ -656,8 +656,8 @@ class SystemGUI(QMainWindow):
         """รันไฟล์ camera.py สำหรับตั้งค่ากล้อง"""
         try:
             if os.path.exists('GUI_line_detected_plate.pyw'):
-                # รันแบบ non-blocking
-                process = subprocess.Popen(['pythonw', 'GUI_line_detected_plate.pyw'])
+                venv_python = os.path.join("venv", "Scripts", "pythonw.exe")
+                process = subprocess.Popen([venv_python, "GUI_line_detected_plate.pyw"])
                 print(f"✅ เริ่มรัน GUI_line_detected_plate.pyw - PID: {process.pid}")
             else:
                 print("❌ ไม่พบไฟล์ GUI_line_detected_plate.pyw")
@@ -855,7 +855,9 @@ class SystemGUI(QMainWindow):
 
     def start_program(self):
         """เริ่มโปรแกรม - รันไฟล์ทั้งหมด"""
-        process = subprocess.Popen(['pythonw', 'compare_data.pyw'])
+        # path ไปยัง pythonw.exe ใน venv
+        venv_python = os.path.join("venv", "Scripts", "pythonw.exe")
+        process = subprocess.Popen([venv_python, "compare_data.pyw"])
         while True:
             if os.path.exists("txt_file/databases_status.txt"):
                 with open("txt_file/databases_status.txt") as f:
@@ -893,13 +895,20 @@ class SystemGUI(QMainWindow):
                 print("✅ เริ่มกล้อง")
             
             # รันไฟล์ python แต่ละตัว
-            files_to_run = ['line_detected_plate.pyw', 'arduino_connect.pyw', 'detected_caracter.pyw','text_to_speak.pyw']
-            
+            files_to_run = [
+                'line_detected_plate.pyw',
+                'arduino_connect.pyw',
+                'detected_caracter.pyw',
+                'text_to_speak.pyw'
+            ]
+
+            self.running_processes = []
+
             for file_name in files_to_run:
                 if os.path.exists(file_name):
-                    process = subprocess.Popen(['pythonw', file_name])
+                    process = subprocess.Popen([venv_python, file_name])
                     self.running_processes.append(process)
-                    
+
                     print(f"✅ เริ่มรัน {file_name} - PID: {process.pid}")
                 else:
                     print(f"❌ ไม่พบไฟล์ {file_name}")
